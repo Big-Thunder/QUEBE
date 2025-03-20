@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Player_Firepoint
+  - Enemy
+  - Player_Model
+  - SpawnDistPoint
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - PlyBullet
+  - EnemyBullet
+  - CoverPoint
+  - NoNav
+  - Enemy
+  - MouseGuy
+  - LineOfSight
+  - Floor
+  - EnemyDamgeTaker
+  - PlayerDamageTaker
+  - Ragdoll
+  - DroneSpawnner
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

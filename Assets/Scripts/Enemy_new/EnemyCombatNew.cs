@@ -51,7 +51,7 @@ public class EnemyCombatNew : MonoBehaviour
         if (timeBetShots <= 0f)
         {
             GameObject newBullet = Instantiate(bulletObj, firePoint.position, firePoint.rotation);
-            newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * bulletSpeed;
+            newBullet.GetComponent<Rigidbody>().linearVelocity = newBullet.transform.forward * bulletSpeed;
             newBullet.GetComponent<EnemyBulletBehaviour>().dmg = dmg;
             soundManager.Play("EnemyBullet");
             timeBetShots = startTimeBetShots; 
@@ -67,7 +67,7 @@ public class EnemyCombatNew : MonoBehaviour
         if (gameManager.timeBetBombs <= 0f)
         {
             GameObject newBomb = Instantiate(bombObject, firePoint.position, firePoint.rotation);
-            newBomb.GetComponent<Rigidbody>().velocity = newBomb.transform.forward * bombSpeed;
+            newBomb.GetComponent<Rigidbody>().linearVelocity = newBomb.transform.forward * bombSpeed;
             gameManager.timeBetBombs = gameManager.startTimeBetBombs;
         }
         else

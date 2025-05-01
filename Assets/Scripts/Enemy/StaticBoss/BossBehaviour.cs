@@ -120,7 +120,7 @@ public class BossBehaviour : MonoBehaviour
         if (currentCountsOfBombRain == 0)
         {
             GameObject newBullet = Instantiate(bulletObj, firePoint.position, firePoint.rotation);
-            newBullet.GetComponent<Rigidbody>().velocity = bulletSpeed * newBullet.transform.forward;
+            newBullet.GetComponent<Rigidbody>().linearVelocity = bulletSpeed * newBullet.transform.forward;
             newBullet.GetComponent<EnemyBulletBehaviour>().dmg = gunDmg;
             timeBetShots = startTimeBetShots;
         }
@@ -133,7 +133,7 @@ public class BossBehaviour : MonoBehaviour
         if (currentCountsOfBombRain == 0)
         {
             GameObject newBullet = Instantiate(bulletObj_bomb, firePoint_bomb.position, firePoint_bomb.rotation);
-            newBullet.GetComponent<Rigidbody>().velocity = bulletSpeed * newBullet.transform.forward;
+            newBullet.GetComponent<Rigidbody>().linearVelocity = bulletSpeed * newBullet.transform.forward;
             newBullet.GetComponent<EnemyBulletBehaviour>().dmg = bombDmg;
             animator.SetTrigger("Bomb");
         }
@@ -144,7 +144,7 @@ public class BossBehaviour : MonoBehaviour
         while (currentCountsOfBombRain < countsOfBombRain)  // Run only if the count is less than the limit
         {
             GameObject newBullet = Instantiate(bulletObj_rain, firePoint_rain.position, firePoint_rain.rotation);
-            newBullet.GetComponent<Rigidbody>().velocity = bulletSpeed * newBullet.transform.forward;
+            newBullet.GetComponent<Rigidbody>().linearVelocity = bulletSpeed * newBullet.transform.forward;
 
             yield return new WaitForSeconds(1f);
 
@@ -156,7 +156,7 @@ public class BossBehaviour : MonoBehaviour
             StartCoroutine(ActivateRainAttackWarning(randomPoint, timeToReach));
 
             newBullet.transform.forward = (randomPoint - newBullet.transform.position).normalized;
-            newBullet.GetComponent<Rigidbody>().velocity = bulletSpeed * (randomPoint - newBullet.transform.position).normalized;
+            newBullet.GetComponent<Rigidbody>().linearVelocity = bulletSpeed * (randomPoint - newBullet.transform.position).normalized;
             newBullet.GetComponent<EnemyBulletBehaviour>().dmg = rainDmg;
 
             currentCountsOfBombRain++;  // Increment the count

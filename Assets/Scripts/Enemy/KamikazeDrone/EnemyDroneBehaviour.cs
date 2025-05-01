@@ -239,7 +239,7 @@ public class EnemyDroneBehaviour : MonoBehaviour
         if (timeBetShots_R <= 0f)
         {
             GameObject newBullet_R = Instantiate(bulletObj, firePoint_R.position, firePoint_R.rotation);
-            newBullet_R.GetComponent<Rigidbody>().velocity = newBullet_R.transform.forward * bulletSpeed;
+            newBullet_R.GetComponent<Rigidbody>().linearVelocity = newBullet_R.transform.forward * bulletSpeed;
             timeBetShots_R = startTimeBetShots_R;
         }
         else
@@ -250,7 +250,7 @@ public class EnemyDroneBehaviour : MonoBehaviour
         if (timeBetShots_L <= 0f)
         {
             GameObject newBullet_L = Instantiate(bulletObj, firePoint_L.position, firePoint_L.rotation);
-            newBullet_L.GetComponent<Rigidbody>().velocity = newBullet_L.transform.forward * bulletSpeed;
+            newBullet_L.GetComponent<Rigidbody>().linearVelocity = newBullet_L.transform.forward * bulletSpeed;
             timeBetShots_L = startTimeBetShots_L;
         }
         else

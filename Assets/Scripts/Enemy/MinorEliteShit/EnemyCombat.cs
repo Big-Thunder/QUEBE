@@ -57,7 +57,7 @@ public class EnemyCombat : MonoBehaviour
         if (timeBetShots <= 0f)
         {
             GameObject newBullet = Instantiate(bulletObj, enemyFirepoint.position, enemyFirepoint.rotation);
-            newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * bulletSpeed;
+            newBullet.GetComponent<Rigidbody>().linearVelocity = newBullet.transform.forward * bulletSpeed;
             timeBetShots = startTimeBetShots; 
         }
         else 

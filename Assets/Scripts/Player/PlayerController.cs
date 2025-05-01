@@ -34,14 +34,14 @@ public class PlayerController : MonoBehaviour
         moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVector.Normalize();
 
-        rb.drag = linearDrag;
+        rb.linearDamping = linearDrag;
 
-        Vector3 normVel = rb.velocity.normalized;
+        Vector3 normVel = rb.linearVelocity.normalized;
 
         if (normVel.magnitude >= 0.25f)
         {
-            animator.SetFloat("Vel_y", rb.velocity.x);
-            animator.SetFloat("Vel_x", -rb.velocity.z);
+            animator.SetFloat("Vel_y", rb.linearVelocity.x);
+            animator.SetFloat("Vel_x", -rb.linearVelocity.z);
             soundManager.StartPlayingOnLoop("QuebeWalk");
         }
         else

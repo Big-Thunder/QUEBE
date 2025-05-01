@@ -70,7 +70,7 @@ public class PlayerCombat : MonoBehaviour
             if (timeBetShots_L <= 0f)
             {
                 GameObject newBullet = Instantiate(bulletObj, firePointLeft.position, firePointLeft.rotation);
-                newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * bulletSpeed_L;
+                newBullet.GetComponent<Rigidbody>().linearVelocity = newBullet.transform.forward * bulletSpeed_L;
                 newBullet.GetComponent<BulletBehaviour>().dmg = Dmg_L;
                 timeBetShots_L = startTimeBetShots_L;
                 // camShake.ShakeSmall();
@@ -88,7 +88,7 @@ public class PlayerCombat : MonoBehaviour
             if (timeBetShots_R <= 0f)
             {
                 GameObject newBullet = Instantiate(bulletObj, firePointRight.position, firePointRight.rotation);
-                newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * bulletSpeed_R;
+                newBullet.GetComponent<Rigidbody>().linearVelocity = newBullet.transform.forward * bulletSpeed_R;
                 newBullet.GetComponent<BulletBehaviour>().dmg = Dmg_R;
                 timeBetShots_R = startTimeBetShots_R;
                 // camShake.ShakeSmall();
